@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user")
+@Table(name = "userInfo")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,5 +17,14 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String phone;
+    private String email;
+    private LocalDateTime dateTimeFrom;
+    private LocalDateTime dateTimeTo;
+
+
+
 }

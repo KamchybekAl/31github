@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orderDetail")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -16,5 +16,7 @@ import javax.persistence.*;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
+    private Boolean isPaid;
+    private Double totalPrice;
 }
