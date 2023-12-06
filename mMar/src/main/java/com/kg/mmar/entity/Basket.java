@@ -19,6 +19,7 @@ public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Double quantity;
     private LocalDate createdDate;
 }
