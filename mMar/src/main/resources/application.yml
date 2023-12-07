@@ -7,6 +7,6 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-#  mvc:
-#    path match:
-#      matching-strategy: ant_path_matcher
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
