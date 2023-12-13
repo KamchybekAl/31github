@@ -19,5 +19,8 @@ public class Product {
     private Long id;
     private Double weight;
     private Double quantity;
+    @ManyToOne
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    private Category category;
 
 }

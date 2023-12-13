@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "basket")
@@ -22,4 +23,7 @@ public class Basket {
 
     private Double quantity;
     private LocalDate createdDate;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Product>productList;
+
 }
