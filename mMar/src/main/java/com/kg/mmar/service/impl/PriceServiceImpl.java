@@ -4,6 +4,7 @@ import com.kg.mmar.dto.PriceDto;
 import com.kg.mmar.entity.Price;
 import com.kg.mmar.mapper.PriceMapper;
 import com.kg.mmar.repository.PriceRepo;
+import com.kg.mmar.repository.ProductRepo;
 import com.kg.mmar.service.PriceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

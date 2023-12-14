@@ -24,6 +24,9 @@ public class User {
     private String email;
     private LocalDateTime dateTimeFrom;
     private LocalDateTime dateTimeTo;
+    @OneToOne
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
 
 
 

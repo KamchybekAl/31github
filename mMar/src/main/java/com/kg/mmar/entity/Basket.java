@@ -25,5 +25,8 @@ public class Basket {
     private LocalDate createdDate;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Product>productList;
+    @OneToOne
+    @JoinColumn(name = "user_info_id")
+    private User user;
 
 }

@@ -25,5 +25,9 @@ public class Price {
     private LocalDateTime startDate;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime endTime;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
 
 }
