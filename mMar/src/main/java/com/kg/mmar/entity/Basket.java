@@ -28,5 +28,8 @@ public class Basket {
     @OneToOne
     @JoinColumn(name = "user_info_id")
     private User user;
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Order order;
 
 }

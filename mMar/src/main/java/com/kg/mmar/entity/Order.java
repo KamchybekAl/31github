@@ -19,4 +19,7 @@ public class Order {
     private Long id;
     private Boolean isPaid;
     private Double totalPrice;
+    @OneToOne
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
 }
