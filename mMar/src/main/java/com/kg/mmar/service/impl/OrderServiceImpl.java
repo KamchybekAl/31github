@@ -4,6 +4,7 @@ import com.kg.mmar.dto.OrderDto;
 import com.kg.mmar.entity.Order;
 import com.kg.mmar.mapper.OrderMapper;
 import com.kg.mmar.repository.OrderRepo;
+import com.kg.mmar.service.BasketService;
 import com.kg.mmar.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,9 +19,11 @@ import java.util.List;
 public class OrderServiceImpl implements OrderService {
     private final OrderRepo orderRepo;
     private final OrderMapper orderMapper;
+    private final BasketService basketService;
     @Override
     public OrderDto saveOrder(OrderDto orderDto) {
         Order order = orderMapper.toEntity(orderDto);
+        order.setBasket(basketService.findByIdBasket(order.getBasket().getId()));
         Order save = orderRepo.save(order);
         return orderMapper.toDto(save);
     }

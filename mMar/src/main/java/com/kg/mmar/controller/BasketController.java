@@ -1,6 +1,7 @@
 package com.kg.mmar.controller;
 
 import com.kg.mmar.dto.BasketDto;
+import com.kg.mmar.entity.Basket;
 import com.kg.mmar.service.BasketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,7 @@ public class BasketController {
     }
 
     @GetMapping("/findById")
-    public BasketDto findById(@RequestParam Long id){
+    public Basket findById(@RequestParam Long id){
         return basketService.findByIdBasket(id);
     }
 

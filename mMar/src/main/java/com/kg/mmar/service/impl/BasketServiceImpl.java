@@ -25,8 +25,8 @@ public class BasketServiceImpl implements BasketService {
     }
 
     @Override
-    public BasketDto findByIdBasket(Long id) {
-        return basketMapper.toDto(basketRepo.findById(id).get());
+    public Basket findByIdBasket(Long id) {
+        return basketRepo.findById(id).get();
     }
 
     @Override
