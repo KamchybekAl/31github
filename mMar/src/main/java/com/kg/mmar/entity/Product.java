@@ -17,8 +17,11 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String nameOfProduct;
+    private String brand;
     private Double weight;
-    private Double quantity;
+    private Double availableQuantity;
+    private Boolean isActual;
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;

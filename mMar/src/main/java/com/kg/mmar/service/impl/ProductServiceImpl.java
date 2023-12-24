@@ -39,7 +39,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDto updateProduct(ProductDto productDto) {
         Product updateProductPr = productRepo.findById(productDto.getId()).get();
-        updateProductPr.setQuantity(productDto.getQuantity());
+//        updateProductPr.setQuantity(productDto.getQuantity());
         updateProductPr.setWeight(productDto.getWeight());
         return productMapper.toDto(updateProductPr);
     }

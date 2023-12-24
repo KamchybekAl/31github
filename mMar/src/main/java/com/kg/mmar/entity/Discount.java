@@ -20,6 +20,7 @@ public class Discount {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double discount;
+    private Boolean isActual;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime startDate;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")

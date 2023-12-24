@@ -21,6 +21,7 @@ public class Price {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double price;
+    private Boolean isActual;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
     private LocalDateTime startDate;
     @JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
