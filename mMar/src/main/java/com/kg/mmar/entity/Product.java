@@ -1,5 +1,6 @@
 package com.kg.mmar.entity;
 
+import com.kg.mmar.entity.enams.ProductCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,7 @@ public class Product {
     private Double weight;
     private Double availableQuantity;
     private Boolean isActual;
-    @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private Category category;
+    @Enumerated(value = EnumType.STRING)
+    private ProductCategory productCategory;
 
 }
