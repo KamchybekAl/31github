@@ -50,4 +50,9 @@ public class ProductServiceImpl implements ProductService {
         productRepo.delete(deleteProduct);
 
     }
+
+    @Override
+    public List<ProductDto> getProductCategory(String ProductCategory) {
+        return productMapper.toDtoList(productRepo.getProductCategory(ProductCategory));
+    }
 }

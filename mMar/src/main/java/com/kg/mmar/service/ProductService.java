@@ -10,5 +10,6 @@ public interface ProductService {
     List<ProductDto>findAllProduct();
     ProductDto updateProduct (ProductDto productDto);
     void deleteProduct(Long id);
+    List<ProductDto> getProductCategory(String ProductCategory);
 
 }
