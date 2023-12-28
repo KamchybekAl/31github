@@ -1,5 +1,6 @@
 package com.kg.mmar.dto;
 
+import com.kg.mmar.entity.Product;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -11,5 +12,6 @@ public class DiscountDto {
     private Double discount;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
-    private Integer daysCount;
+    private Integer daysCountForDiscount;
+    private Product product;
 }

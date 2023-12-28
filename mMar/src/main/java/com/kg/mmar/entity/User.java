@@ -22,6 +22,7 @@ public class User {
     private String lastName;
     private String phone;
     private String email;
+    private Boolean isActive;
     private LocalDateTime dateTimeFrom;
     private LocalDateTime dateTimeTo;
     @OneToOne

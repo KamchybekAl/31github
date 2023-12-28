@@ -4,12 +4,12 @@ import com.kg.mmar.dto.PriceDto;
 import com.kg.mmar.entity.Price;
 import com.kg.mmar.mapper.PriceMapper;
 import com.kg.mmar.repository.PriceRepo;
-import com.kg.mmar.repository.ProductRepo;
 import com.kg.mmar.service.PriceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -21,6 +21,8 @@ public class PriceServiceImpl implements PriceService {
     @Override
     public PriceDto savePrice(PriceDto priceDto) {
         Price price = priceMapper.toEntity(priceDto);
+        price.setStartDate(LocalDateTime.now());
+        price.setEndTime(price.getStartDate().plusYears(100));
         Price save = priceRepo.save(price);
         return priceMapper.toDto(save);
     }

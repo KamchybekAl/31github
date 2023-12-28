@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface PriceRepo extends JpaRepository<Price,Long> {
-//    Optional<Price>findByProduct(Product product);
+public interface PriceRepo extends JpaRepository<Price, Long> {
+    Optional<Price> findByProduct(Product product);
 }
