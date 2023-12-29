@@ -1,11 +1,14 @@
 package com.kg.mmar.service.impl;
 
+import com.kg.mmar.dto.UserBasketDTO;
 import com.kg.mmar.dto.UserDto;
 import com.kg.mmar.entity.User;
 import com.kg.mmar.mapper.UserMapper;
 import com.kg.mmar.repository.UserRepo;
+import com.kg.mmar.service.BasketService;
 import com.kg.mmar.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -18,6 +21,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private final UserRepo userRepo;
     private final UserMapper userMapper;
+    private final BasketService basketService;
     @Override
     public UserDto saveUser(UserDto userDto) {
         User user = userMapper.toEntity(userDto);
@@ -49,5 +53,14 @@ public class UserServiceImpl implements UserService {
         User deleteUser = userRepo.findById(id).get();
         userRepo.delete(deleteUser);
 
+    }
+
+    @Override
+    public ResponseEntity<?> saveUserAndBasket(UserBasketDTO dto) {
+        userRepo.save(dto.getUser());
+        UserBasketDTO userBasketDTO = new UserBasketDTO();
+        userBasketDTO.setUser(userRepo.save(dto.getUser()));
+        userBasketDTO.setBasket(basketService.saveBasket(dto.getBasket()));
+        return ResponseEntity.ok(userBasketDTO);
     }
 }

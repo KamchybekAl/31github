@@ -1,8 +1,10 @@
 package com.kg.mmar.controller;
 
+import com.kg.mmar.dto.UserBasketDTO;
 import com.kg.mmar.dto.UserDto;
 import com.kg.mmar.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,4 +39,8 @@ public class UserController {
         userService.deleteUser(id);
     }
 
+    @PostMapping("/saveUserAndBasket")
+    public ResponseEntity<?> saveUserAndBasket(@RequestBody UserBasketDTO dto) {
+        return userService.saveUserAndBasket(dto);
+    }
 }

@@ -6,7 +6,7 @@ import com.kg.mmar.entity.Basket;
 import java.util.List;
 
 public interface BasketService {
-    BasketDto saveBasket(BasketDto basketDto);
+    Basket saveBasket(Basket basket);
     Basket findByIdBasket(Long id);
     List<BasketDto> findAllBasket();
     BasketDto updateBasket(BasketDto basketDto);

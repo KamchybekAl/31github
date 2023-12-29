@@ -18,10 +18,10 @@ public class BasketServiceImpl implements BasketService {
     private final BasketRepo basketRepo;
     private final BasketMapper basketMapper;
     @Override
-    public BasketDto saveBasket(BasketDto basketDto) {
-        Basket basket =basketMapper.toEntity(basketDto);
-        Basket save = basketRepo.save(basket);
-        return basketMapper.toDto(save);
+    public Basket saveBasket(Basket basket) {
+//        Basket basket =basketMapper.toEntity(basket);
+        return basketRepo.save(basket);
+
     }
 
     @Override

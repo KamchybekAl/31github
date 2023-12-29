@@ -15,8 +15,8 @@ public class BasketController {
     private final BasketService basketService;
 
     @PostMapping("save")
-    public BasketDto saveBasket(@RequestBody BasketDto basketDto) {
-        return basketService.saveBasket(basketDto);
+    public Basket saveBasket(@RequestBody Basket basket) {
+        return basketService.saveBasket(basket);
     }
 
     @GetMapping("/findById")
